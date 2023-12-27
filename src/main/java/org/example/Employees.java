@@ -7,8 +7,10 @@ public class Employees {
     private String empPosition;
     private int empWorkedDays;
     private double empSalary;
+
     public Employees() {
     }
+
     public Employees(int empId, String empName, String empSurname, String empPosition, int empWorkedDays,double empSalary) {
         this.empId = empId;
         this.empName = empName;

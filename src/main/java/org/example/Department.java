@@ -42,5 +42,12 @@ public class Department {
         System.out.println("-----DEPARTMAN  BİLGİLERİ-----");
         System.out.println("Departman Id : " + depId);
         System.out.println("Departman Adı : " + depName);
+        System.out.println("-----PERSONEL BİLGİLERİ-----");
+        System.out.println("Personel Id : " + employees.getEmpId());
+        System.out.println("Personel Adı : " + employees.getEmpName());
+        System.out.println("Personel Soyadı : " + employees.getEmpSurname());
+        System.out.println("Personel Pozisyonu : " + employees.getEmpPosition());
+        System.out.println("Personelin Çalıştığı Gün :" + employees.getEmpWorkedDays());
+        System.out.println("Personel Maaşı : " + employees.getEmpSalary());
     }
 }
