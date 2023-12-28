@@ -1,6 +1,6 @@
 package org.example;
 
-public class Employees {
+public class Employees extends Department{
     private int empId;
     private String empName;
     private String empSurname;
@@ -11,12 +11,26 @@ public class Employees {
     public Employees() {
     }
 
-    public Employees(int empId, String empName, String empSurname, String empPosition, int empWorkedDays,double empSalary) {
+    public Employees(int empId, String empName, String empSurname, String empPosition, int empWorkedDays, double empSalary) {
         this.empId = empId;
         this.empName = empName;
         this.empSurname = empSurname;
         this.empPosition = empPosition;
-        this.empWorkedDays=empWorkedDays;
+        this.empWorkedDays = empWorkedDays;
+        if ((this.empWorkedDays>25) && (this.empWorkedDays<32)) {
+            this.empSalary = empSalary+(this.empWorkedDays-25)*1000;
+        } else {
+            this.empSalary = empSalary;
+        }
+    }
+
+    public Employees(int depId, String depName, int empId, String empName, String empSurname, String empPosition, int empWorkedDays, double empSalary) {
+        super(depId, depName);
+        this.empId = empId;
+        this.empName = empName;
+        this.empSurname = empSurname;
+        this.empPosition = empPosition;
+        this.empWorkedDays = empWorkedDays;
         if ((this.empWorkedDays>25) && (this.empWorkedDays<32)) {
             this.empSalary = empSalary+(this.empWorkedDays-25)*1000;
         } else {
@@ -72,7 +86,18 @@ public class Employees {
             this.empSalary = empSalary;
     }
 
-    public void empDisplay() {
+    @Override
+    public void displayData() {
+        super.displayData();
+        System.out.println("Personel Id : " + empId);
+        System.out.println("Personel Adı : " + empName);
+        System.out.println("Personel Soyadı : " + empSurname);
+        System.out.println("Personel Pozisyonu : " + empPosition);
+        System.out.println("Personelin Çalıştığı Gün :" + empWorkedDays);
+        System.out.println("Personel Maaşı : " + empSalary);
+    }
+
+    public void displayEmpData() {
         System.out.println("-----PERSONEL BİLGİLERİ-----");
         System.out.println("Personel Id : " + empId);
         System.out.println("Personel Adı : " + empName);

@@ -3,15 +3,13 @@ package org.example;
 public class Department {
     private int depId;
     private String depName;
-    private Employees employees;
 
     public Department() {
     }
 
-    public Department(int depId, String depName, Employees employees) {
+    public Department(int depId, String depName) {
         this.depId = depId;
         this.depName = depName;
-        this.employees = employees;
     }
 
     public int getDepId() {
@@ -30,24 +28,9 @@ public class Department {
         this.depName = depName;
     }
 
-    public Employees getEmployees() {
-        return employees;
-    }
-
-    public void setEmployees(Employees employees) {
-        this.employees = employees;
-    }
-
-    public void depDisplay() {
-        System.out.println("-----DEPARTMAN  BİLGİLERİ-----");
+    public void displayData() {
+        System.out.println("-----DEPARTMAN BİLGİLERİ-----");
         System.out.println("Departman Id : " + depId);
         System.out.println("Departman Adı : " + depName);
-        System.out.println("-----PERSONEL BİLGİLERİ-----");
-        System.out.println("Personel Id : " + employees.getEmpId());
-        System.out.println("Personel Adı : " + employees.getEmpName());
-        System.out.println("Personel Soyadı : " + employees.getEmpSurname());
-        System.out.println("Personel Pozisyonu : " + employees.getEmpPosition());
-        System.out.println("Personelin Çalıştığı Gün :" + employees.getEmpWorkedDays());
-        System.out.println("Personel Maaşı : " + employees.getEmpSalary());
     }
 }
